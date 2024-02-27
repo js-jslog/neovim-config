@@ -1,3 +1,6 @@
 require('jslog.plugins.install')
+require('jslog.plugins.fugitive')
 require('jslog.plugins.telescope')
 require('jslog.plugins.treesitter')
+require('jslog.plugins.harpoon')
+require('jslog.plugins.undotree')

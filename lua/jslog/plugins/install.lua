@@ -14,6 +14,8 @@ vim.opt.rtp:prepend(lazypath)
 require('lazy').setup({
   'folke/tokyonight.nvim',
   'tpope/vim-fugitive',
+  'theprimeagen/harpoon',
+  'mbbill/undotree',
   {
 	  'nvim-telescope/telescope.nvim', tag = '0.1.5',
 	  dependencies = { 'nvim-lua/plenary.nvim' }
