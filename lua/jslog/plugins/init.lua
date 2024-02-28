@@ -1,4 +1,5 @@
 require('jslog.plugins.install')
+require('jslog.plugins.tokyonight')
 require('jslog.plugins.fugitive')
 require('jslog.plugins.telescope')
 require('jslog.plugins.treesitter')
