@@ -1,3 +1,3 @@
 require("jslog.remap")
 require("jslog.plugins")
-require("jslog.visual")
+require("jslog.options")
