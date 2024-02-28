@@ -2,8 +2,6 @@ vim.cmd[[colorscheme tokyonight]]
 
 vim.opt.diffopt:append('vertical')
 
-vim.opt.guicursor = "" -- fat cursor
-
 vim.opt.nu = true
 vim.opt.relativenumber = true
 
@@ -13,3 +11,14 @@ vim.opt.shiftwidth = 4
 vim.opt.expandtab = true
 
 vim.opt.smartindent = true
+
+vim.opt.wrap = false
+
+vim.opt.swapfile = false
+vim.opt.backup = false
+vim.opt.undofile = true
+
+vim.opt.colorcolumn = '50,80,100'
+vim.opt.cursorcolumn = true
+
+vim.opt.updatetime = 50
