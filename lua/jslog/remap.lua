@@ -17,3 +17,4 @@ vim.keymap.set("n", "<Up>", ":resize -5<CR>", { silent = true })
 vim.api.nvim_set_keymap('n', '<Leader>gp', ":execute ':!git push'<CR>", { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<Leader>gl', ":execute ':!git pull'<CR>", { noremap = true, silent = true })
 
+vim.api.nvim_set_option("clipboard", "unnamed")
