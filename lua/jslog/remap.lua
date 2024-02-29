@@ -55,3 +55,6 @@ vim.keymap.set('v', '<Leader>d', '"_d')
 
 -- Replace all occurences in file
 vim.keymap.set('n','<Leader>s', ':%s/\\<<C-r><C-w>\\>/<C-r><C-w>/gI<Left><Left><Left>')
+
+-- Open the Copilot panel
+vim.keymap.set('n', '<Leader>cp', ':Copilot panel<CR>')

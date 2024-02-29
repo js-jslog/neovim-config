@@ -33,4 +33,5 @@ require('lazy').setup({
   {'hrsh7th/nvim-cmp'},
   {'L3MON4D3/LuaSnip'},
   -- END LSP RELATED PLUGINS --
+  'github/copilot.vim',
 })
