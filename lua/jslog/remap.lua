@@ -5,6 +5,7 @@ vim.keymap.set('n', '<Leader>w', ':write<CR>')
 vim.keymap.set('n', '<Leader>q', ':quit<CR>')
 vim.keymap.set('n', '<Leader>wq', ':write<CR>:quit<CR>')
 vim.keymap.set('n', '-', vim.cmd.Ex)
+vim.keymap.set('n', '_', vim.cmd.Sex)
 vim.keymap.set('n', '+', vim.cmd.Vex)
 
 vim.keymap.set('n', '<C-h>', '<C-w>h')
@@ -58,3 +59,6 @@ vim.keymap.set('n','<Leader>s', ':%s/\\<<C-r><C-w>\\>/<C-r><C-w>/gI<Left><Left><
 
 -- Open the Copilot panel
 vim.keymap.set('n', '<Leader>cp', ':Copilot panel<CR>')
+
+-- Show this buffers diagnostics issues
+vim.keymap.set('n', '<Leader>di', ':lua vim.diagnostic.setloclist()<CR>')
