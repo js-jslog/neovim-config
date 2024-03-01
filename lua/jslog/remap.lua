@@ -62,3 +62,9 @@ vim.keymap.set('n', '<Leader>cp', ':Copilot panel<CR>')
 
 -- Show this buffers diagnostics issues
 vim.keymap.set('n', '<Leader>di', ':lua vim.diagnostic.setloclist()<CR>')
+
+-- Show currently marked files - see ShowNetrwMF for details
+vim.keymap.set('n', '<Leader>mp', ':lua ShowNetrwMF()<CR>')
+
+-- Copy currently marked files to the netrw target directory - see ShowNetrwMF for details
+vim.keymap.set('n', '<Leader>mc', ':lua CopyNetrwMF()<CR>')
