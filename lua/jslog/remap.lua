@@ -17,6 +17,9 @@ vim.keymap.set("n", "<Left>", ":vertical resize -5<CR>", { silent = true })
 vim.keymap.set("n", "<Up>", ":resize +5<CR>", { silent = true })
 vim.keymap.set("n", "<Down>", ":resize -5<CR>", { silent = true })
 
+vim.keymap.set('n', ']q', ':cnext<CR>')
+vim.keymap.set('n', '[q', ':cprev<CR>')
+
 vim.api.nvim_set_keymap('n', '<Leader>gp', ":execute ':!git push'<CR>", { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<Leader>gl', ":execute ':!git pull'<CR>", { noremap = true, silent = true })
 
@@ -60,8 +63,12 @@ vim.keymap.set('n','<Leader>s', ':%s/\\<<C-r><C-w>\\>/<C-r><C-w>/gI<Left><Left><
 -- Open the Copilot panel
 vim.keymap.set('n', '<Leader>cp', ':Copilot panel<CR>')
 
--- Show this buffers diagnostics issues
-vim.keymap.set('n', '<Leader>di', ':lua vim.diagnostic.setloclist()<CR>')
+-- Hide all inline diagnostics messages (might be helpful if it's noisy)
+vim.keymap.set('n', '<Leader>dih', ':lua vim.diagnostic.hide()<CR>')
+-- Show all inline diagnostics messages
+vim.keymap.set('n', '<Leader>dis', ':lua vim.diagnostic.show()<CR>')
+-- Show this buffers diagnostics in a panel
+vim.keymap.set('n', '<Leader>dip', ':lua vim.diagnostic.setloclist()<CR>')
 
 -- Show currently marked files - see ShowNetrwMF for details
 vim.keymap.set('n', '<Leader>mp', ':lua ShowNetrwMF()<CR>')
