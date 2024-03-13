@@ -35,6 +35,7 @@ if isDevContainer == "true" then
     -- it's clipboard content in to the container.
 
     local clipboard_path = os.getenv("CLIPBOARDPATH") or ""
+    local clip_emitter_path = os.getenv("CLIPEMITTERPATH") or ""
 
     local function WriteToClipboard(clipcontents)
         local clipboard_file = io.open(clipboard_path, 'w')
@@ -52,8 +53,7 @@ if isDevContainer == "true" then
     end
 
     local function EmitClipboard()
-        local script_path = '/development-env/socat-emitter-container.sh'
-        local command = 'sh ' .. script_path
+        local command = 'sh ' .. clip_emitter_path
 
         vim.fn.system(command)
 
