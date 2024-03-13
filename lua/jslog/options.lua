@@ -28,13 +28,16 @@ local isDevContainer = os.getenv("ISDEVCONTAINER")
 if isDevContainer == "true" then
     -- The following clipboard is for use with an editor
     -- running in a container and coupled with a strategy
-    -- which uses the /dev/clipboard as an intermediary.
+    -- which uses the $CLIPBOARDPATH as an intermediary.
     -- This config specifically relies on a socat emitter
     -- to get the clipboard contents out to the host,
     -- but is agnostic about how the host is getting
     -- it's clipboard content in to the container.
+
+    local clipboard_path = os.getenv("CLIPBOARDPATH") or ""
+
     local function WriteToClipboard(clipcontents)
-        local clipboard_file = io.open('/dev/clipboard', 'w')
+        local clipboard_file = io.open(clipboard_path, 'w')
         if clipboard_file then
             for index, clipline in pairs(clipcontents) do
                 if index > 1 then
@@ -44,7 +47,7 @@ if isDevContainer == "true" then
             end
             clipboard_file:close()
         else
-            print('Error: unable to open /dev/clipboard for writing.')
+            print('Error: unable to open ' .. clipboard_path .. ' for writing.')
         end
     end
 
@@ -74,8 +77,8 @@ if isDevContainer == "true" then
             end,
         },
         paste = {
-            ['+'] = 'cat /dev/clipboard',
-            ['*'] = 'cat /dev/clipboard',
+            ['+'] = 'cat ' .. clipboard_path,
+            ['*'] = 'cat ' .. clipboard_path,
         },
         cache_enabled = 1
     }
