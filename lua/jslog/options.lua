@@ -54,9 +54,7 @@ if isDevContainer == 'true' then
     end
 
     local function EmitClipboard()
-        local command = 'sh ' .. clip_emitter_path
-
-        vim.fn.system(command)
+        vim.fn.system(clip_emitter_path)
 
         if vim.v.shell_error == 0 then
             print('Clipboard emitted successfully')
