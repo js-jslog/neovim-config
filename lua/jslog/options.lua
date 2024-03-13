@@ -24,8 +24,8 @@ vim.opt.cursorcolumn = true
 vim.opt.updatetime = 50
 
 -- Custom clipboard for sharing with host from container context
-local isDevContainer = os.getenv("ISDEVCONTAINER")
-if isDevContainer == "true" then
+local isDevContainer = os.getenv('ISDEVCONTAINER')
+if isDevContainer == 'true' then
     -- The following clipboard is for use with an editor
     -- running in a container and coupled with a strategy
     -- which uses the $CLIPBOARDPATH as an intermediary.
@@ -34,8 +34,8 @@ if isDevContainer == "true" then
     -- but is agnostic about how the host is getting
     -- it's clipboard content in to the container.
 
-    local clipboard_path = os.getenv("CLIPBOARDPATH") or ""
-    local clip_emitter_path = os.getenv("CLIPEMITTERPATH") or ""
+    local clipboard_path = os.getenv('CLIPBOARDPATH') or ''
+    local clip_emitter_path = os.getenv('CLIPEMITTERPATH') or ''
 
     local function WriteToClipboard(clipcontents)
         local clipboard_file = io.open(clipboard_path, 'w')
