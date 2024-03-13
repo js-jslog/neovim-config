@@ -28,11 +28,12 @@ local isDevContainer = os.getenv('ISDEVCONTAINER')
 if isDevContainer == 'true' then
     -- The following clipboard is for use with an editor
     -- running in a container and coupled with a strategy
-    -- which uses the $CLIPBOARDPATH as an intermediary.
-    -- This config specifically relies on a socat emitter
-    -- to get the clipboard contents out to the host,
-    -- but is agnostic about how the host is getting
-    -- it's clipboard content in to the container.
+    -- which uses the $CLIPBOARDPATH as a system clipboard
+    -- and the $CLIPEMITTERPATH as an application for
+    -- getting the system clipboard contents out to the host.
+    -- This config is agnostic about the location and
+    -- implementation of these elements, other than the
+    -- manner of input for $CLIPEMMITERPATH.
 
     local clipboard_path = os.getenv('CLIPBOARDPATH') or ''
     local clip_emitter_path = os.getenv('CLIPEMITTERPATH') or ''
