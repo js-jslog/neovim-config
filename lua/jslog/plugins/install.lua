@@ -34,4 +34,13 @@ require('lazy').setup({
   {'L3MON4D3/LuaSnip'},
   -- END LSP RELATED PLUGINS --
   'github/copilot.vim',
+  'github/copilot.vim',
+  {
+    'rcarriga/nvim-dap-ui',
+    dependencies = {'mfussenegger/nvim-dap', 'nvim-neotest/nvim-nio'}
+  },
+  {
+    'jay-babu/mason-nvim-dap.nvim',
+    dependencies = {'rcarriga/nvim-dap-ui','williamboman/mason.nvim'}
+  }
 })
