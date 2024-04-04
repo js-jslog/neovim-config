@@ -35,12 +35,24 @@ require('lazy').setup({
   -- END LSP RELATED PLUGINS --
   'github/copilot.vim',
   'github/copilot.vim',
+  -- START DAP RELATED PLUGINS --
+  'mfussenegger/nvim-dap',
+  {
+    'microsoft/vscode-js-debug',
+    dependencies = {'mfussenegger/nvim-dap',},
+    build = 'npm install --legacy-peer-deps && npx gulp vsDebugServerBundle && mv dist out'
+  },
+  {
+    'mxsdev/nvim-dap-vscode-js',
+    dependencies = {'mfussenegger/nvim-dap', 'microsoft/vscode-js-debug'}
+  },
+  {
+    'jay-babu/mason-nvim-dap.nvim',
+    dependencies = {'williamboman/mason.nvim', 'mfussenegger/nvim-dap', 'mxsdev/nvim-dap-vscode-js'}
+  },
   {
     'rcarriga/nvim-dap-ui',
     dependencies = {'mfussenegger/nvim-dap', 'nvim-neotest/nvim-nio'}
   },
-  {
-    'jay-babu/mason-nvim-dap.nvim',
-    dependencies = {'rcarriga/nvim-dap-ui','williamboman/mason.nvim'}
-  }
+  -- END DAP RELATED PLUGINS --
 })
