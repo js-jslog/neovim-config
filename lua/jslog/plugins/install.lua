@@ -38,13 +38,16 @@ require('lazy').setup({
   -- START DAP RELATED PLUGINS --
   'mfussenegger/nvim-dap',
   {
+    'stevearc/overseer.nvim',
+    opts = {},
+  },
+  {
     'microsoft/vscode-js-debug',
-    dependencies = {'mfussenegger/nvim-dap',},
     build = 'npm install --legacy-peer-deps && npx gulp vsDebugServerBundle && mv dist out'
   },
   {
     'mxsdev/nvim-dap-vscode-js',
-    dependencies = {'mfussenegger/nvim-dap', 'microsoft/vscode-js-debug'}
+    dependencies = {'mfussenegger/nvim-dap', 'microsoft/vscode-js-debug', 'stevearc/overseer.nvim' }
   },
   {
     'jay-babu/mason-nvim-dap.nvim',
