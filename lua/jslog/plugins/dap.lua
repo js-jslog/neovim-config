@@ -15,6 +15,7 @@ require("dap-vscode-js").setup({
   -- log_file_level = false -- Logging level for output to file. Set to false to disable file logging.
   -- log_console_level = vim.log.levels.ERROR -- Logging level for output to console. Set to false to disable console output.
 })
+require("dapui").setup()
 
 local js_based_languages = { "typescript", "javascript", "typescriptreact", "javascriptreact" };
 for _, language in ipairs(js_based_languages) do
@@ -55,4 +56,20 @@ dap_vscode.load_launchjs(nil, {
 
 vim.keymap.set('n', '<Leader>db', ':lua require"dap".toggle_breakpoint()<CR>')
 vim.keymap.set('n', '<Leader>dc', ':lua require"dap".continue()<CR>')
+vim.keymap.set('n', '<Leader>do', ':lua require"dap".step_over()<CR>')
+vim.keymap.set('n', '<Leader>di', ':lua require"dap".step_into()<CR>')
+vim.keymap.set('n', '<Leader>dr', ':lua require"dap".repl.open()<CR>')
 
+local dap, dapui = require("dap"), require("dapui")
+dap.listeners.before.attach.dapui_config = function()
+  dapui.open()
+end
+dap.listeners.before.launch.dapui_config = function()
+  dapui.open()
+end
+dap.listeners.before.event_terminated.dapui_config = function()
+  dapui.close()
+end
+dap.listeners.before.event_exited.dapui_config = function()
+  dapui.close()
+end
