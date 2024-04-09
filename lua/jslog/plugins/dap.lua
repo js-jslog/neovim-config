@@ -35,7 +35,21 @@ for _, language in ipairs(js_based_languages) do
       --processId = require'dap.utils'.pick_process, -- seems not to be required, auto-attach happens successfully in all the contexts I've tried
       cwd = "${workspaceFolder}",
       --cwd = vim.fn.getcwd(), -- alternate way of getting workspace folder which may only do the same as "${workspaceFolder}" but while I'm paranoid about getting this working I jjj
-      port = 9230,
+      port = function()
+        local co = coroutine.running()
+        return coroutine.create(function()
+          vim.ui.input({
+            prompt = "Enter node inspector port: ",
+            default = "9229",
+          }, function(port)
+            if port == nil or port == "" then
+              return
+            else
+              coroutine.resume(co, port)
+            end
+          end)
+        end)
+      end,
       sourceMaps = true,
     },
     -- Divider for the launch.json derived configs
