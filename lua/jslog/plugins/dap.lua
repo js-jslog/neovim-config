@@ -31,7 +31,7 @@ for _, language in ipairs(js_based_languages) do
     {
       type = "pwa-node",
       request = "attach",
-      name = "Attach",
+      name = "Attach to local server:?",
       --processId = require'dap.utils'.pick_process, -- seems not to be required, auto-attach happens successfully in all the contexts I've tried
       cwd = "${workspaceFolder}",
       --cwd = vim.fn.getcwd(), -- alternate way of getting workspace folder which may only do the same as "${workspaceFolder}" but while I'm paranoid about getting this working I jjj
@@ -55,10 +55,10 @@ for _, language in ipairs(js_based_languages) do
     {
       type = "pwa-chrome",
       request = "attach",
-      name = "Debug Chrome",
-      address = "0.0.0.0",
+      name = "Attach to docker host remote chrome:9222",
+      address = "host.docker.internal",
       port = "9222",
-      webRoot = vim.fn.getcwd(),
+      webRoot = "${workspaceFolder}",
       protocol = "inspector",
       sourceMaps = true,
       userDataDir = false,
