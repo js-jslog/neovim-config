@@ -24,6 +24,16 @@ require('lazy').setup({
 	  'nvim-treesitter/nvim-treesitter',
 	  run = ':TSUpdate'
   },
+  {
+    'nvim-lualine/lualine.nvim',
+    dependencies = { 'nvim-tree/nvim-web-devicons' }
+  },
+  {
+    'stevearc/dressing.nvim',
+    opts = {},
+  },
+  { 'lukas-reineke/indent-blankline.nvim', main = 'ibl', opts = {} },
+  { 'echasnovski/mini.indentscope', version = '*' },
   -- START LSP RELATED PLUGINS --
   {'williamboman/mason.nvim'},
   {'williamboman/mason-lspconfig.nvim'},
