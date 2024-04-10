@@ -52,6 +52,17 @@ for _, language in ipairs(js_based_languages) do
       end,
       sourceMaps = true,
     },
+    {
+      type = "pwa-chrome",
+      request = "attach",
+      name = "Debug Chrome",
+      address = "0.0.0.0",
+      port = "9222",
+      webRoot = vim.fn.getcwd(),
+      protocol = "inspector",
+      sourceMaps = true,
+      userDataDir = false,
+    },
     -- Divider for the launch.json derived configs
     {
       name = '----- launch.json configs (if available) -----',
