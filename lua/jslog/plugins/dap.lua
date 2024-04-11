@@ -1,9 +1,3 @@
-require('mason').setup({
-  log_level = vim.log.levels.DEBUG
-})
-require('mason-nvim-dap').setup({
-  ensure_installed = { 'js', 'node2', 'chrome', 'firefox' },
-})
 require("dap-vscode-js").setup({
   -- node_path = "node", -- Path of node executable. Defaults to $NODE_PATH, and then "node"
   -- debugger_path = vim.fn.resolve(vim.fn.stdpath("data") .. "/mason/packages/js-debug-adapter/js-debug/src/dapDebugServer.js"),

@@ -50,10 +50,6 @@ require('lazy').setup({
     dependencies = {'mfussenegger/nvim-dap', 'microsoft/vscode-js-debug', 'stevearc/overseer.nvim' }
   },
   {
-    'jay-babu/mason-nvim-dap.nvim',
-    dependencies = {'williamboman/mason.nvim', 'mfussenegger/nvim-dap', 'mxsdev/nvim-dap-vscode-js'}
-  },
-  {
     'rcarriga/nvim-dap-ui', tag = 'v4.0.0',
     dependencies = {'mfussenegger/nvim-dap', 'nvim-neotest/nvim-nio'}
   },
