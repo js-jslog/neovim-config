@@ -39,6 +39,13 @@ require('lazy').setup({
   {
     'echasnovski/mini.indentscope', tag = '0.12.0'
   },
+  { 'MunifTanjim/nui.nvim', tag = '0.3.0' },
+  { 'rcarriga/nvim-notify', tag = 'v3.13.4' },
+  {
+    'folke/noice.nvim', tag = 'v2.0.1',
+    event = 'VeryLazy', opts = {},
+    dependencies = { 'MunifTanjim/nui.nvim', 'rcarriga/nvim-notify' },
+  },
   -- START LSP RELATED PLUGINS --
   {'williamboman/mason.nvim'},
   {'williamboman/mason-lspconfig.nvim'},
