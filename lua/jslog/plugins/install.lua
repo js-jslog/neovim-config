@@ -25,15 +25,21 @@ require('lazy').setup({
 	  run = ':TSUpdate'
   },
   {
-    'nvim-lualine/lualine.nvim',
+    'nvim-lualine/lualine.nvim', tag = 'compat-nvim-0.6',
     dependencies = { 'nvim-tree/nvim-web-devicons' }
   },
   {
-    'stevearc/dressing.nvim',
+    'stevearc/dressing.nvim', tag = 'v2.2.0',
     opts = {},
   },
-  { 'lukas-reineke/indent-blankline.nvim', main = 'ibl', opts = {} },
-  { 'echasnovski/mini.indentscope', version = '*' },
+  {
+    'lukas-reineke/indent-blankline.nvim', tag = 'v3.5.4',
+    main = 'ibl', opts = {}
+  },
+  {
+    'echasnovski/mini.indentscope', tag = '0.12.0',
+    version = '*'
+  },
   -- START LSP RELATED PLUGINS --
   {'williamboman/mason.nvim'},
   {'williamboman/mason-lspconfig.nvim'},
