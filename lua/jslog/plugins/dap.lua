@@ -93,3 +93,8 @@ end
 dap.listeners.before.event_exited.dapui_config = function()
   dapui.close()
 end
+
+vim.keymap.set('n', '<Leader>du', ':lua require"dapui".toggle()<CR>')
+vim.keymap.set('n', '<Leader>de', ':lua require"dapui".eval()<CR>')
+vim.keymap.set('n', '<Leader>df', ':lua require"dapui".float_element()<CR>')
+
