@@ -37,8 +37,7 @@ require('lazy').setup({
     main = 'ibl', opts = {}
   },
   {
-    'echasnovski/mini.indentscope', tag = '0.12.0',
-    version = '*'
+    'echasnovski/mini.indentscope', tag = '0.12.0'
   },
   -- START LSP RELATED PLUGINS --
   {'williamboman/mason.nvim'},
