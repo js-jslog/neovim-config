@@ -37,7 +37,7 @@ require('lazy').setup({
     main = 'ibl', opts = {}
   },
   {
-    'echasnovski/mini.indentscope', tag = '0.12.0'
+    'echasnovski/mini.indentscope', tag = 'v0.12.0'
   },
   { 'MunifTanjim/nui.nvim', tag = '0.3.0' },
   { 'rcarriga/nvim-notify', tag = 'v3.13.4' },
