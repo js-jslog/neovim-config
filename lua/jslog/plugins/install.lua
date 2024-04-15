@@ -46,6 +46,16 @@ require('lazy').setup({
     event = 'VeryLazy', opts = {},
     dependencies = { 'MunifTanjim/nui.nvim', 'rcarriga/nvim-notify' },
   },
+  {
+    'folke/which-key.nvim', tag = 'v1.6.0',
+    event = 'VeryLazy',
+    init = function()
+      vim.o.timeout = true
+      vim.o.timeoutlen = 300
+    end,
+    opts = {}
+  },
+  { 'kdheepak/lazygit.nvim', version = '0ada6c6e7e138df92f5009b6952f4ac41248305a' },
   -- START LSP RELATED PLUGINS --
   {'williamboman/mason.nvim'},
   {'williamboman/mason-lspconfig.nvim'},
