@@ -24,6 +24,38 @@ require('lazy').setup({
 	  'nvim-treesitter/nvim-treesitter',
 	  run = ':TSUpdate'
   },
+  {
+    'nvim-lualine/lualine.nvim', tag = 'compat-nvim-0.6',
+    dependencies = { 'nvim-tree/nvim-web-devicons' }
+  },
+  {
+    'stevearc/dressing.nvim', tag = 'v2.2.0',
+    opts = {},
+  },
+  {
+    'lukas-reineke/indent-blankline.nvim', tag = 'v3.5.4',
+    main = 'ibl', opts = {}
+  },
+  {
+    'echasnovski/mini.indentscope', tag = 'v0.12.0'
+  },
+  { 'MunifTanjim/nui.nvim', tag = '0.3.0' },
+  { 'rcarriga/nvim-notify', tag = 'v3.13.4' },
+  {
+    'folke/noice.nvim', tag = 'v2.0.1',
+    event = 'VeryLazy', opts = {},
+    dependencies = { 'MunifTanjim/nui.nvim', 'rcarriga/nvim-notify' },
+  },
+  {
+    'folke/which-key.nvim', tag = 'v1.6.0',
+    event = 'VeryLazy',
+    init = function()
+      vim.o.timeout = true
+      vim.o.timeoutlen = 300
+    end,
+    opts = {}
+  },
+  { 'kdheepak/lazygit.nvim', version = '0ada6c6e7e138df92f5009b6952f4ac41248305a' },
   -- START LSP RELATED PLUGINS --
   {'williamboman/mason.nvim'},
   {'williamboman/mason-lspconfig.nvim'},
