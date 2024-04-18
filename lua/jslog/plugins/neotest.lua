@@ -1,3 +1,12 @@
+-- This is apparently helpful to neotest, but I
+-- can't see any improvement at the moment. I'm
+-- also a little worried about potential conflicts
+-- with anything lua related that Mason will do,
+-- so I'd rather comment it out for now.
+--require("neodev").setup({
+--  library = { plugins = { "neotest" }, types = true },
+--})
+
 require('neotest').setup({
   adapters = {
     require('neotest-vitest') {

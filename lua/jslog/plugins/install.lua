@@ -19,8 +19,9 @@ require('lazy').setup({
   { "nvim-lua/plenary.nvim", tag = 'v0.1.4' },
   { "antoinemadec/FixCursorHold.nvim", version = '1900f89dc17c603eec29960f57c00bd9ae696495' }, -- TODO potentially not required after anymore. See https://github.com/antoinemadec/FixCursorHold.nvim
   { "marilari88/neotest-vitest", tag = 'v0.2.0' },
-  { "nvim-neotest/neotest-jest", version = '514fd4eae7da15fd409133086bb8e029b65ac43f' }, 
+  { "nvim-neotest/neotest-jest", version = '514fd4eae7da15fd409133086bb8e029b65ac43f' },
   { "nvim-neotest/neotest-go", version = '6a2f996d89fe4631942e035b1c114544ee045043' },
+  { "folke/neodev.nvim", tag = 'v2.5.2', opts = {} },
   -- END THE DEPENDENCY ONLY PLUGINS
   'folke/tokyonight.nvim',
   'tpope/vim-fugitive',
@@ -103,6 +104,8 @@ require('lazy').setup({
       "nvim-lua/plenary.nvim",
       "antoinemadec/FixCursorHold.nvim", -- TODO potentially not required after anymore. See https://github.com/antoinemadec/FixCursorHold.nvim - although, also see https://github.com/antoinemadec/FixCursorHold.nvim/issues/13
       "nvim-treesitter/nvim-treesitter",
+      -- the optional one
+      -- "folke/neodev.nvim",
       -- then adapters
       "marilari88/neotest-vitest",
       "nvim-neotest/neotest-jest",
