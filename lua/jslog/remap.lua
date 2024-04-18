@@ -63,6 +63,13 @@ vim.keymap.set('n','<Leader>s', ':%s/\\<<C-r><C-w>\\>/<C-r><C-w>/gI<Left><Left><
 -- Open the Copilot panel
 vim.keymap.set('n', '<Leader>cp', ':Copilot panel<CR>')
 
+-- Ensure that source is shown
+-- (Doesn't seem to be working in float,
+-- but I'll leave that config here anyway)
+vim.diagnostic.config({
+  virtual_text = { source = true },
+  float = { source = true },
+})
 -- Hide all inline diagnostics messages (might be helpful if it's noisy)
 vim.keymap.set('n', '<Leader>dih', ':lua vim.diagnostic.hide()<CR>')
 -- Show all inline diagnostics messages
