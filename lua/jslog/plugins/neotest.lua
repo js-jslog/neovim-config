@@ -34,7 +34,6 @@ require('neotest').setup({
 })
 
 vim.keymap.set('n', '<Leader>tt', ':lua require"neotest".run.run()<CR>')
-vim.keymap.set('n', '<Leader>tf', ':lua require"neotest".run.run(vim.fn.expand("%"))<CR>')
+vim.keymap.set('n', '<Leader>ta', ':lua require"neotest".run.run(vim.fn.expand("%"))<CR>')
 vim.keymap.set('n', '<Leader>td', ':lua require"neotest".run.run({strategy = "dap"})<CR>')
 vim.keymap.set('n', '<Leader>ts', ':lua require"neotest".run.stop()<CR>')
-vim.keymap.set('n', '<Leader>ta', ':lua require"neotest".run.attach()<CR>')
