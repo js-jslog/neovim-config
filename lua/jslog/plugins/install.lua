@@ -73,6 +73,17 @@ require('lazy').setup({
       'neovim/nvim-lspconfig'
     },
   },
+  {
+    'nvimtools/none-ls.nvim', version = '88821b67e6007041f43b802f58e3d9fa9bfce684',
+  },
+  {
+    'jay-babu/mason-null-ls.nvim', tag = 'v2.6.0',
+    event = { "BufReadPre", "BufNewFile" },
+    dependencies = {
+      "williamboman/mason.nvim",
+      "nvimtools/none-ls.nvim",
+    },
+  },
   -- END AUTO-FORMATTING PLUGINS--
   -- END LSP RELATED PLUGINS --
   'github/copilot.vim',
