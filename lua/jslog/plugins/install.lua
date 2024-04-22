@@ -64,6 +64,16 @@ require('lazy').setup({
   {'hrsh7th/cmp-nvim-lsp'},
   {'hrsh7th/nvim-cmp'},
   {'L3MON4D3/LuaSnip'},
+  -- START AUTO-FORMATTING PLUGINS--
+  { 'lukas-reineke/lsp-format.nvim', tag = 'v2.6.5' },
+  {
+    'creativenull/efmls-configs-nvim', tag = 'v1.6.0',
+    dependencies = {
+      'lukas-reineke/lsp-format.nvim',
+      'neovim/nvim-lspconfig'
+    },
+  },
+  -- END AUTO-FORMATTING PLUGINS--
   -- END LSP RELATED PLUGINS --
   'github/copilot.vim',
   -- START DAP RELATED PLUGINS --
