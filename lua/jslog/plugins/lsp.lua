@@ -22,7 +22,7 @@ vim.keymap.set('n', '<Leader>lci', ':lua vim.lsp.buf.incoming_calls()<CR>')
 vim.keymap.set('n', '<Leader>lco', ':lua vim.lsp.buf.outgoing_calls()<CR>')
 vim.keymap.set('n', '<Leader>lr', ':lua vim.lsp.buf.references()<CR>')
 vim.keymap.set('n', '<Leader>r', ':lua vim.lsp.buf.rename()<CR>')
-
+vim.keymap.set('n', '<Leader>lca', ':lua vim.lsp.buf.code_action()<CR>')
 
 local null_ls = require 'null-ls'
 null_ls.setup()
