@@ -123,4 +123,17 @@ require("lazy").setup({
 		dependencies = { "mfussenegger/nvim-dap", "nvim-neotest/nvim-nio" },
 	},
 	-- END DAP RELATED PLUGINS --
+	------- WARNING ------- WARNING ------- WARNING -------
+	-- Included to allow `Trouble workspace_diagnostics`
+	-- to show results for non-buffered files.
+	-- The autor warns that this might come with some risk
+	-- so I should keep my eyes open.
+	{ "artemave/workspace-diagnostics.nvim", version = "429174d53652dbef56868a2cbeb8b28cb5d44fdd" },
+	--END-- WARNING ------- WARNING ------- WARNING -------
+	{ "nvim-tree/nvim-web-devicons", tag = "v0.99" },
+	{
+		"folke/trouble.nvim",
+		tag = "v2.10.0",
+		dependencies = { "nvim-tree/nvim-web-devicons" },
+	},
 })

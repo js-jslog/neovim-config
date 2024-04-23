@@ -1,10 +1,16 @@
 local lsp_zero = require("lsp-zero")
 
----@diagnostic disable-next-line: unused-local
 lsp_zero.on_attach(function(client, bufnr)
 	-- see :help lsp-zero-keybindings
 	-- to learn the available actions
 	lsp_zero.default_keymaps({ buffer = bufnr })
+	------- WARNING ------- WARNING ------- WARNING -------
+	-- Included to allow `Trouble workspace_diagnostics`
+	-- to show results for non-buffered files.
+	-- The autor warns that this might come with some risk
+	-- so I should keep my eyes open.
+	require("workspace-diagnostics").populate_workspace_diagnostics(client, bufnr)
+	--END-- WARNING ------- WARNING ------- WARNING -------
 end)
 
 require("mason").setup({})
@@ -24,6 +30,8 @@ vim.keymap.set("n", "<Leader>lco", ":lua vim.lsp.buf.outgoing_calls()<CR>")
 vim.keymap.set("n", "<Leader>lr", ":lua vim.lsp.buf.references()<CR>")
 vim.keymap.set("n", "<Leader>r", ":lua vim.lsp.buf.rename()<CR>")
 vim.keymap.set("n", "<Leader>lca", ":lua vim.lsp.buf.code_action()<CR>")
+vim.keymap.set("n", "<leader>xa", ':lua require"trouble".toggle("workspace_diagnostics")<CR>')
+vim.keymap.set("n", "<leader>xb", ':lua require"trouble".toggle("document_diagnostics")<CR>')
 
 local null_ls = require("null-ls")
 null_ls.setup()
