@@ -1,10 +1,16 @@
 local lsp_zero = require("lsp-zero")
 
----@diagnostic disable-next-line: unused-local
 lsp_zero.on_attach(function(client, bufnr)
 	-- see :help lsp-zero-keybindings
 	-- to learn the available actions
 	lsp_zero.default_keymaps({ buffer = bufnr })
+	----- WARNING ----- WARNING ----- WARNING -----
+	-- Included to allow `Trouble workspace_diagnostics`
+	-- to show results for non-buffered files.
+	-- The autor warns that this might come with some risk
+	-- so I should keep my eyes open.
+	require("workspace-diagnostics").populate_workspace_diagnostics(client, bufnr)
+	----- WARNING ----- WARNING ----- WARNING -----
 end)
 
 require("mason").setup({})
