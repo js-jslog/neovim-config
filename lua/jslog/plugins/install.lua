@@ -85,15 +85,6 @@ require("lazy").setup({
 	{ "hrsh7th/nvim-cmp" },
 	{ "L3MON4D3/LuaSnip" },
 	-- START AUTO-FORMATTING PLUGINS--
-	{ "lukas-reineke/lsp-format.nvim", tag = "v2.6.5" },
-	{
-		"creativenull/efmls-configs-nvim",
-		tag = "v1.6.0",
-		dependencies = {
-			"lukas-reineke/lsp-format.nvim",
-			"neovim/nvim-lspconfig",
-		},
-	},
 	{
 		"nvimtools/none-ls.nvim",
 		version = "88821b67e6007041f43b802f58e3d9fa9bfce684",
