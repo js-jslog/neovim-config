@@ -31,14 +31,18 @@ null_ls.setup()
 -- TODO: If I want to upgrade to prettierd in the future
 -- then I might have to find a way to set this variable
 --os.execute("export PRETTIERD_DEFAULT_CONFIG=/app/.prettierrc")
-require('mason-null-ls').setup({
-  ensure_installed = { 'prettier' },
-  handlers = {
-    function() end, -- disables automatic setup of all null-ls sources
-    ---@diagnostic disable-next-line: unused-local
-    prettier = function(source_name, methods)
-      null_ls.register(null_ls.builtins.formatting.prettier)
-    end,
-  },
+require("mason-null-ls").setup({
+	ensure_installed = { "prettier", "stylua" },
+	handlers = {
+		function() end, -- disables automatic setup of all null-ls sources
+		---@diagnostic disable-next-line: unused-local
+		prettier = function(source_name, methods)
+			null_ls.register(null_ls.builtins.formatting.prettier)
+		end,
+		---@diagnostic disable-next-line: unused-local
+		stylua = function(source_name, methods)
+			null_ls.register(null_ls.builtins.formatting.stylua)
+		end,
+	},
 })
 vim.cmd("autocmd BufWritePre * lua vim.lsp.buf.format()")
