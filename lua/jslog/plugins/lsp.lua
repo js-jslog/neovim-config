@@ -22,7 +22,7 @@ require("mason-lspconfig").setup({
 	},
 })
 
-vim.keymap.set("n", "<Leader>t", ":lua vim.lsp.buf.hover()<CR>")
+vim.keymap.set("n", "<Leader>lt", ":lua vim.lsp.buf.hover()<CR>")
 vim.keymap.set("n", "<Leader>li", ":lua vim.lsp.buf.implementation()<CR>")
 vim.keymap.set("n", "<Leader>ld", ":lua vim.lsp.buf.definition()<CR>")
 vim.keymap.set("n", "<Leader>lci", ":lua vim.lsp.buf.incoming_calls()<CR>")

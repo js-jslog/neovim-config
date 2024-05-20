@@ -73,11 +73,12 @@ dap_vscode.load_launchjs(nil, {
 	["pwa-chrome"] = js_based_languages,
 })
 
-vim.keymap.set("n", "<Leader>db", ':lua require"dap".toggle_breakpoint()<CR>')
-vim.keymap.set("n", "<Leader>dc", ':lua require"dap".continue()<CR>')
-vim.keymap.set("n", "<Leader>do", ':lua require"dap".step_over()<CR>')
-vim.keymap.set("n", "<Leader>di", ':lua require"dap".step_into()<CR>')
-vim.keymap.set("n", "<Leader>dr", ':lua require"dap".repl.open()<CR>')
+vim.keymap.set('n', '<Leader>db', ':lua require"dap".toggle_breakpoint()<CR>')
+vim.keymap.set('n', '<Leader>dc', ':lua require"dap".continue()<CR>')
+vim.keymap.set('n', '<Leader>dj', ':lua require"dap".step_into()<CR>')
+vim.keymap.set('n', '<Leader>dk', ':lua require"dap".step_out()<CR>')
+vim.keymap.set('n', '<Leader>dl', ':lua require"dap".step_over()<CR>')
+vim.keymap.set('n', '<Leader>dr', ':lua require"dap".repl.open()<CR>')
 
 local dapui = require("dapui")
 dapui.setup()

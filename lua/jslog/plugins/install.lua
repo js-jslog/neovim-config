@@ -12,6 +12,17 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
+	-- START THE DEPENDENCY ONLY PLUGINS
+	-- as far as I'm aware I don't think
+	-- I use any of these directly
+	{ "nvim-neotest/nvim-nio", tag = "v1.9.0" },
+	{ "nvim-lua/plenary.nvim", tag = "v0.1.4" },
+	{ "antoinemadec/FixCursorHold.nvim", version = "1900f89dc17c603eec29960f57c00bd9ae696495" }, -- Claims not to be required at https://github.com/antoinemadec/FixCursorHold.nvim but it is. See https://github.com/antoinemadec/FixCursorHold.nvim/issues/13
+	{ "marilari88/neotest-vitest", tag = "v0.2.0" },
+	{ "nvim-neotest/neotest-jest", version = "514fd4eae7da15fd409133086bb8e029b65ac43f" },
+	{ "nvim-neotest/neotest-go", version = "6a2f996d89fe4631942e035b1c114544ee045043" },
+	{ "folke/neodev.nvim", tag = "v2.5.2", opts = {} },
+	-- END THE DEPENDENCY ONLY PLUGINS
 	"folke/tokyonight.nvim",
 	"tpope/vim-fugitive",
 	"theprimeagen/harpoon",
@@ -74,15 +85,6 @@ require("lazy").setup({
 	{ "hrsh7th/nvim-cmp" },
 	{ "L3MON4D3/LuaSnip" },
 	-- START AUTO-FORMATTING PLUGINS--
-	{ "lukas-reineke/lsp-format.nvim", tag = "v2.6.5" },
-	{
-		"creativenull/efmls-configs-nvim",
-		tag = "v1.6.0",
-		dependencies = {
-			"lukas-reineke/lsp-format.nvim",
-			"neovim/nvim-lspconfig",
-		},
-	},
 	{
 		"nvimtools/none-ls.nvim",
 		version = "88821b67e6007041f43b802f58e3d9fa9bfce684",
@@ -135,5 +137,22 @@ require("lazy").setup({
 		"folke/trouble.nvim",
 		tag = "v2.10.0",
 		dependencies = { "nvim-tree/nvim-web-devicons" },
+	},
+	{
+		"nvim-neotest/neotest",
+		tag = "v5.1.0",
+		dependencies = {
+			-- first the required deps
+			"nvim-neotest/nvim-nio",
+			"nvim-lua/plenary.nvim",
+			"antoinemadec/FixCursorHold.nvim", -- Claims not to be required at https://github.com/antoinemadec/FixCursorHold.nvim but it is. See https://github.com/antoinemadec/FixCursorHold.nvim/issues/13
+			"nvim-treesitter/nvim-treesitter",
+			-- the optional one
+			-- "folke/neodev.nvim",
+			-- then adapters
+			"marilari88/neotest-vitest",
+			"nvim-neotest/neotest-jest",
+			"nvim-neotest/neotest-go",
+		},
 	},
 })
