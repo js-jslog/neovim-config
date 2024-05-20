@@ -63,59 +63,11 @@ require("lazy").setup({
 	--.......................................................--
 	--.......................................................--
 	-----------------------------------------------------------
-	{ "folke/tokyonight.nvim", tag = "v3.0.1" },
-	{ "tpope/vim-fugitive", version = "4f59455d2388e113bd510e85b310d15b9228ca0d" },
-	{ "theprimeagen/harpoon", version = "ccae1b9bec717ae284906b0bf83d720e59d12b91" },
-	{ "mbbill/undotree", version = "56c684a805fe948936cda0d1b19505b84ad7e065" },
-	{
-		"nvim-telescope/telescope.nvim",
-		tag = "0.1.5",
-		dependencies = { "nvim-lua/plenary.nvim" },
-	},
-	{
-		"nvim-treesitter/nvim-treesitter",
-		tag = "v0.9.2",
-		run = ":TSUpdate",
-	},
-	{
-		"nvim-lualine/lualine.nvim",
-		tag = "compat-nvim-0.6",
-		dependencies = { "nvim-tree/nvim-web-devicons" },
-	},
-	{
-		"stevearc/dressing.nvim",
-		tag = "v2.2.0",
-		opts = {},
-	},
-	{
-		"lukas-reineke/indent-blankline.nvim",
-		tag = "v3.5.4",
-		main = "ibl",
-		opts = {},
-	},
-	{
-		"echasnovski/mini.indentscope",
-		tag = "v0.12.0",
-	},
-	{
-		"folke/noice.nvim",
-		tag = "v2.0.1",
-		event = "VeryLazy",
-		opts = {},
-		dependencies = { "MunifTanjim/nui.nvim", "rcarriga/nvim-notify" },
-	},
-	{
-		"folke/which-key.nvim",
-		tag = "v1.6.0",
-		event = "VeryLazy",
-		init = function()
-			vim.o.timeout = true
-			vim.o.timeoutlen = 300
-		end,
-		opts = {},
-	},
-	{ "kdheepak/lazygit.nvim", version = "0ada6c6e7e138df92f5009b6952f4ac41248305a" },
-	-- START LSP RELATED PLUGINS --
+	----------------------------------------
+	--....................................--
+	--........ START LSP PLUGINS .........--
+	--....................................--
+	----------------------------------------
 	{
 		"williamboman/mason-lspconfig.nvim",
 		tag = "v1.29.0",
@@ -127,7 +79,11 @@ require("lazy").setup({
 	{ "hrsh7th/cmp-nvim-lsp", version = "39e2eda76828d88b773cc27a3f61d2ad782c922d" },
 	{ "hrsh7th/nvim-cmp", version = "5260e5e8ecadaf13e6b82cf867a909f54e15fd07" },
 	{ "L3MON4D3/LuaSnip", tag = "v2.3.0" },
-	-- START AUTO-FORMATTING PLUGINS--
+	-----------------------------------
+	--...............................--
+	-- START AUTO-FORMATTING PLUGINS --
+	--...............................--
+	-----------------------------------
 	{
 		"jay-babu/mason-null-ls.nvim",
 		tag = "v2.6.0",
@@ -137,10 +93,21 @@ require("lazy").setup({
 			"nvimtools/none-ls.nvim",
 		},
 	},
-	-- END AUTO-FORMATTING PLUGINS--
-	-- END LSP RELATED PLUGINS --
-	{ "github/copilot.vim", branch = "release" },
-	-- START DAP RELATED PLUGINS --
+	-----------------------------------
+	--...............................--
+	--. END AUTO-FORMATTING PLUGINS .--
+	--...............................--
+	-----------------------------------
+	----------------------------------------
+	--....................................--
+	--.......... END LSP PLUGINS .........--
+	--....................................--
+	----------------------------------------
+	----------------------------------------
+	--....................................--
+	--......... START DAP PLUGINS ........--
+	--....................................--
+	----------------------------------------
 	{
 		"mfussenegger/nvim-dap",
 		tag = "0.7.0",
@@ -165,15 +132,16 @@ require("lazy").setup({
 		tag = "v4.0.0",
 		dependencies = { "mfussenegger/nvim-dap", "nvim-neotest/nvim-nio" },
 	},
-	-- END DAP RELATED PLUGINS --
-	{
-		"folke/trouble.nvim",
-		tag = "v2.10.0",
-		dependencies = {
-			"nvim-tree/nvim-web-devicons",
-			"artemave/workspace-diagnostics.nvim",
-		},
-	},
+	----------------------------------------
+	--....................................--
+	--.......... END DAP PLUGINS .........--
+	--....................................--
+	----------------------------------------
+	----------------------------------------
+	--....................................--
+	--........ START TEST PLUGINS ........--
+	--....................................--
+	----------------------------------------
 	{
 		"nvim-neotest/neotest",
 		tag = "v5.1.0",
@@ -191,6 +159,102 @@ require("lazy").setup({
 			"nvim-neotest/neotest-go",
 		},
 	},
+	----------------------------------------
+	--....................................--
+	--......... END TEST PLUGINS .........--
+	--....................................--
+	----------------------------------------
+	----------------------------------------
+	--....................................--
+	-- START OTHER KEY FUNCTIONAL PLUGINS --
+	--....................................--
+	----------------------------------------
+	{
+		"nvim-treesitter/nvim-treesitter",
+		tag = "v0.9.2",
+		run = ":TSUpdate",
+	},
+	{
+		"nvim-telescope/telescope.nvim",
+		tag = "0.1.5",
+		dependencies = { "nvim-lua/plenary.nvim" },
+	},
+	{ "theprimeagen/harpoon", version = "ccae1b9bec717ae284906b0bf83d720e59d12b91" },
+	{ "tpope/vim-fugitive", version = "4f59455d2388e113bd510e85b310d15b9228ca0d" },
+	{ "kdheepak/lazygit.nvim", version = "0ada6c6e7e138df92f5009b6952f4ac41248305a" },
+	{
+		"folke/trouble.nvim",
+		tag = "v2.10.0",
+		dependencies = {
+			"nvim-tree/nvim-web-devicons",
+			"artemave/workspace-diagnostics.nvim",
+		},
+	},
+	{ "mbbill/undotree", version = "56c684a805fe948936cda0d1b19505b84ad7e065" },
+	{
+		"folke/which-key.nvim",
+		tag = "v1.6.0",
+		event = "VeryLazy",
+		init = function()
+			vim.o.timeout = true
+			vim.o.timeoutlen = 300
+		end,
+		opts = {},
+	},
+	----------------------------------------
+	--....................................--
+	--. END OTHER KEY FUNCTIONAL PLUGINS .--
+	--....................................--
+	----------------------------------------
+	----------------------------------------
+	--....................................--
+	--....... START VISUAL PLUGINS .......--
+	--....................................--
+	----------------------------------------
+	{ "folke/tokyonight.nvim", tag = "v3.0.1" },
+	{
+		"nvim-lualine/lualine.nvim",
+		tag = "compat-nvim-0.6",
+		dependencies = { "nvim-tree/nvim-web-devicons" },
+	},
+	{
+		"folke/noice.nvim",
+		tag = "v2.0.1",
+		event = "VeryLazy",
+		opts = {},
+		dependencies = { "MunifTanjim/nui.nvim", "rcarriga/nvim-notify" },
+	},
+	{
+		"stevearc/dressing.nvim",
+		tag = "v2.2.0",
+		opts = {},
+	},
+	{
+		"lukas-reineke/indent-blankline.nvim",
+		tag = "v3.5.4",
+		main = "ibl",
+		opts = {},
+	},
+	{
+		"echasnovski/mini.indentscope",
+		tag = "v0.12.0",
+	},
+	----------------------------------------
+	--....................................--
+	--........ END VISUAL PLUGINS ........--
+	--....................................--
+	----------------------------------------
+	----------------------------------------
+	--....................................--
+	--....... START OTHER PLUGINS ........--
+	--....................................--
+	----------------------------------------
+	{ "github/copilot.vim", branch = "release" },
+	----------------------------------------
+	--....................................--
+	--........ END OTHER PLUGINS .........--
+	--....................................--
+	----------------------------------------
 	-----------------------------------------------------------
 	--.......................................................--
 	--.......................................................--
