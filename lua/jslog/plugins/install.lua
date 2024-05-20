@@ -22,10 +22,10 @@ require("lazy").setup({
 	{ "nvim-neotest/neotest-jest", version = "514fd4eae7da15fd409133086bb8e029b65ac43f" },
 	{ "nvim-neotest/neotest-go", version = "6a2f996d89fe4631942e035b1c114544ee045043" },
 	{ "folke/neodev.nvim", tag = "v2.5.2", opts = {} },
-	{ "nvim-tree/nvim-web-devicons", tag = "v0.99" },
+	{ "nvim-tree/nvim-web-devicons", tag = "v0.100" },
 	{ "MunifTanjim/nui.nvim", tag = "0.3.0" },
 	{ "rcarriga/nvim-notify", tag = "v3.13.4" },
-	{ "williamboman/mason.nvim" },
+	{ "williamboman/mason.nvim", tag = "v1.10.0" },
 	{
 		"nvimtools/none-ls.nvim",
 		version = "88821b67e6007041f43b802f58e3d9fa9bfce684",
@@ -38,10 +38,10 @@ require("lazy").setup({
 	{ "artemave/workspace-diagnostics.nvim", version = "429174d53652dbef56868a2cbeb8b28cb5d44fdd" },
 	--END-- WARNING ------- WARNING ------- WARNING -------
 	-- END THE DEPENDENCY ONLY PLUGINS
-	"folke/tokyonight.nvim",
-	"tpope/vim-fugitive",
-	"theprimeagen/harpoon",
-	"mbbill/undotree",
+	{ "folke/tokyonight.nvim", tag = "v3.0.1" },
+	{ "tpope/vim-fugitive", version = "4f59455d2388e113bd510e85b310d15b9228ca0d" },
+	{ "theprimeagen/harpoon", version = "ccae1b9bec717ae284906b0bf83d720e59d12b91" },
+	{ "mbbill/undotree", version = "56c684a805fe948936cda0d1b19505b84ad7e065" },
 	{
 		"nvim-telescope/telescope.nvim",
 		tag = "0.1.5",
@@ -49,6 +49,7 @@ require("lazy").setup({
 	},
 	{
 		"nvim-treesitter/nvim-treesitter",
+		tag = "v0.9.2",
 		run = ":TSUpdate",
 	},
 	{
@@ -90,12 +91,17 @@ require("lazy").setup({
 	},
 	{ "kdheepak/lazygit.nvim", version = "0ada6c6e7e138df92f5009b6952f4ac41248305a" },
 	-- START LSP RELATED PLUGINS --
-	{ "williamboman/mason-lspconfig.nvim", dependencies = { "williamboman/mason.nvim" } },
+	{
+		"williamboman/mason-lspconfig.nvim",
+		tag = "v1.29.0",
+		dependencies = { "williamboman/mason.nvim" },
+	},
 	{ "VonHeikemen/lsp-zero.nvim", branch = "v3.x" },
-	{ "neovim/nvim-lspconfig" },
-	{ "hrsh7th/cmp-nvim-lsp" },
-	{ "hrsh7th/nvim-cmp" },
-	{ "L3MON4D3/LuaSnip" },
+	-- { "VonHeikemen/lsp-zero.nvim", version = "f12d50716e8e59ea9f5cf484eac6968c33a95917" }, TODO: replace previous line with this when ready
+	{ "neovim/nvim-lspconfig", tag = "v0.1.7" },
+	{ "hrsh7th/cmp-nvim-lsp", version = "39e2eda76828d88b773cc27a3f61d2ad782c922d" },
+	{ "hrsh7th/nvim-cmp", version = "5260e5e8ecadaf13e6b82cf867a909f54e15fd07" },
+	{ "L3MON4D3/LuaSnip", tag = "v2.3.0" },
 	-- START AUTO-FORMATTING PLUGINS--
 	{
 		"jay-babu/mason-null-ls.nvim",
@@ -108,10 +114,12 @@ require("lazy").setup({
 	},
 	-- END AUTO-FORMATTING PLUGINS--
 	-- END LSP RELATED PLUGINS --
-	"github/copilot.vim",
+	{ "github/copilot.vim", branch = "release" },
 	-- START DAP RELATED PLUGINS --
-	"mfussenegger/nvim-dap",
-	tag = "0.7.0",
+	{
+		"mfussenegger/nvim-dap",
+		tag = "0.7.0",
+	},
 	{
 		"stevearc/overseer.nvim",
 		tag = "v1.3.1",
