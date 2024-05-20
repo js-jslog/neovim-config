@@ -1,28 +1,28 @@
-local lazypath = vim.fn.stdpath('data') .. '/lazy/lazy.nvim'
+local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
-  vim.fn.system({
-    'git',
-    'clone',
-    '--filter=blob:none',
-    'https://github.com/folke/lazy.nvim.git',
-    '--branch=stable', -- latest stable release
-    lazypath,
-  })
+	vim.fn.system({
+		"git",
+		"clone",
+		"--filter=blob:none",
+		"https://github.com/folke/lazy.nvim.git",
+		"--branch=stable", -- latest stable release
+		lazypath,
+	})
 end
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
-  -- START THE DEPENDENCY ONLY PLUGINS
-  -- as far as I'm aware I don't think
-  -- I use any of these directly
-  { "nvim-neotest/nvim-nio", tag = 'v1.9.0' },
-  { "nvim-lua/plenary.nvim", tag = 'v0.1.4' },
-  { "antoinemadec/FixCursorHold.nvim", version = '1900f89dc17c603eec29960f57c00bd9ae696495' }, -- TODO potentially not required after anymore. See https://github.com/antoinemadec/FixCursorHold.nvim
-  { "marilari88/neotest-vitest", tag = 'v0.2.0' },
-  { "nvim-neotest/neotest-jest", version = '514fd4eae7da15fd409133086bb8e029b65ac43f' },
-  { "nvim-neotest/neotest-go", version = '6a2f996d89fe4631942e035b1c114544ee045043' },
-  { "folke/neodev.nvim", tag = 'v2.5.2', opts = {} },
-  -- END THE DEPENDENCY ONLY PLUGINS
+	-- START THE DEPENDENCY ONLY PLUGINS
+	-- as far as I'm aware I don't think
+	-- I use any of these directly
+	{ "nvim-neotest/nvim-nio", tag = "v1.9.0" },
+	{ "nvim-lua/plenary.nvim", tag = "v0.1.4" },
+	{ "antoinemadec/FixCursorHold.nvim", version = "1900f89dc17c603eec29960f57c00bd9ae696495" }, -- Claims not to be required at https://github.com/antoinemadec/FixCursorHold.nvim but it is. See https://github.com/antoinemadec/FixCursorHold.nvim/issues/13
+	{ "marilari88/neotest-vitest", tag = "v0.2.0" },
+	{ "nvim-neotest/neotest-jest", version = "514fd4eae7da15fd409133086bb8e029b65ac43f" },
+	{ "nvim-neotest/neotest-go", version = "6a2f996d89fe4631942e035b1c114544ee045043" },
+	{ "folke/neodev.nvim", tag = "v2.5.2", opts = {} },
+	-- END THE DEPENDENCY ONLY PLUGINS
 	"folke/tokyonight.nvim",
 	"tpope/vim-fugitive",
 	"theprimeagen/harpoon",
@@ -138,20 +138,21 @@ require("lazy").setup({
 		tag = "v2.10.0",
 		dependencies = { "nvim-tree/nvim-web-devicons" },
 	},
-  {
-    "nvim-neotest/neotest", tag = 'v5.1.0',
-    dependencies = {
-      -- first the required deps
-      "nvim-neotest/nvim-nio",
-      "nvim-lua/plenary.nvim",
-      "antoinemadec/FixCursorHold.nvim", -- TODO potentially not required after anymore. See https://github.com/antoinemadec/FixCursorHold.nvim - although, also see https://github.com/antoinemadec/FixCursorHold.nvim/issues/13
-      "nvim-treesitter/nvim-treesitter",
-      -- the optional one
-      -- "folke/neodev.nvim",
-      -- then adapters
-      "marilari88/neotest-vitest",
-      "nvim-neotest/neotest-jest",
-      "nvim-neotest/neotest-go"
-    }
-  }
+	{
+		"nvim-neotest/neotest",
+		tag = "v5.1.0",
+		dependencies = {
+			-- first the required deps
+			"nvim-neotest/nvim-nio",
+			"nvim-lua/plenary.nvim",
+			"antoinemadec/FixCursorHold.nvim", -- Claims not to be required at https://github.com/antoinemadec/FixCursorHold.nvim but it is. See https://github.com/antoinemadec/FixCursorHold.nvim/issues/13
+			"nvim-treesitter/nvim-treesitter",
+			-- the optional one
+			-- "folke/neodev.nvim",
+			-- then adapters
+			"marilari88/neotest-vitest",
+			"nvim-neotest/neotest-jest",
+			"nvim-neotest/neotest-go",
+		},
+	},
 })
