@@ -12,9 +12,15 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
-	-- START THE DEPENDENCY ONLY PLUGINS
-	-- as far as I'm aware I don't think
-	-- I use any of these directly
+	-----------------------------------------------------------
+	--.......................................................--
+	--.......................................................--
+	--.......... START THE DEPENDENCY ONLY PLUGINS ..........--
+	--.......... as far as I'm aware I don't think ..........--
+	--.......... I use any of these directly       ..........--
+	--.......................................................--
+	--.......................................................--
+	-----------------------------------------------------------
 	{ "nvim-neotest/nvim-nio", tag = "v1.9.0" },
 	{ "nvim-lua/plenary.nvim", tag = "v0.1.4" },
 	{ "antoinemadec/FixCursorHold.nvim", version = "1900f89dc17c603eec29960f57c00bd9ae696495" }, -- Claims not to be required at https://github.com/antoinemadec/FixCursorHold.nvim but it is. See https://github.com/antoinemadec/FixCursorHold.nvim/issues/13
@@ -30,14 +36,33 @@ require("lazy").setup({
 		"nvimtools/none-ls.nvim",
 		version = "88821b67e6007041f43b802f58e3d9fa9bfce684",
 	},
-	------- WARNING ------- WARNING ------- WARNING -------
-	-- Included to allow `Trouble workspace_diagnostics`
-	-- to show results for non-buffered files.
-	-- The autor warns that this might come with some risk
-	-- so I should keep my eyes open.
+	----------------------------------------
+	--....................................--
+	--..... WARNING ....... WARNING ......--
+	--....................................--
+	----------------------------------------
+	-- Included to allow `Trouble workspace_diagnostics` to show results for non-buffered files.
+	-- The autor warns that this might come with some risk so I should keep my eyes open.
 	{ "artemave/workspace-diagnostics.nvim", version = "429174d53652dbef56868a2cbeb8b28cb5d44fdd" },
-	--END-- WARNING ------- WARNING ------- WARNING -------
-	-- END THE DEPENDENCY ONLY PLUGINS
+	----------------------------------------
+	--....................................--
+	--. END WARNING ... END WARNING ......--
+	--....................................--
+	----------------------------------------
+	-----------------------------------------------------------
+	--.......................................................--
+	--.......................................................--
+	--........... END THE DEPENDENCY ONLY PLUGINS ...........--
+	--.......................................................--
+	--.......................................................--
+	-----------------------------------------------------------
+	-----------------------------------------------------------
+	--.......................................................--
+	--.......................................................--
+	--.............. START THE UTILITY PLUGINS ..............--
+	--.......................................................--
+	--.......................................................--
+	-----------------------------------------------------------
 	{ "folke/tokyonight.nvim", tag = "v3.0.1" },
 	{ "tpope/vim-fugitive", version = "4f59455d2388e113bd510e85b310d15b9228ca0d" },
 	{ "theprimeagen/harpoon", version = "ccae1b9bec717ae284906b0bf83d720e59d12b91" },
@@ -166,4 +191,11 @@ require("lazy").setup({
 			"nvim-neotest/neotest-go",
 		},
 	},
+	-----------------------------------------------------------
+	--.......................................................--
+	--.......................................................--
+	--............... END THE UTILITY PLUGINS ...............--
+	--.......................................................--
+	--.......................................................--
+	-----------------------------------------------------------
 })
