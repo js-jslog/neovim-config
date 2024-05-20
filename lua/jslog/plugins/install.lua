@@ -16,39 +16,16 @@ require("lazy").setup({
 	--.......................................................--
 	--.......................................................--
 	--.......... START THE DEPENDENCY ONLY PLUGINS ..........--
-	--.......... as far as I'm aware I don't think ..........--
-	--.......... I use any of these directly       ..........--
+	-- these dependencies are required by multiple plugins . --
+	-- so I have centralised their version control in this . --
+	-- section to aviod the possibility of multiple versions --
 	--.......................................................--
 	--.......................................................--
 	-----------------------------------------------------------
 	{ "nvim-neotest/nvim-nio", tag = "v1.9.0" },
 	{ "nvim-lua/plenary.nvim", tag = "v0.1.4" },
-	{ "antoinemadec/FixCursorHold.nvim", version = "1900f89dc17c603eec29960f57c00bd9ae696495" }, -- Claims not to be required at https://github.com/antoinemadec/FixCursorHold.nvim but it is. See https://github.com/antoinemadec/FixCursorHold.nvim/issues/13
-	{ "marilari88/neotest-vitest", tag = "v0.2.0" },
-	{ "nvim-neotest/neotest-jest", version = "514fd4eae7da15fd409133086bb8e029b65ac43f" },
-	{ "nvim-neotest/neotest-go", version = "6a2f996d89fe4631942e035b1c114544ee045043" },
-	{ "folke/neodev.nvim", tag = "v2.5.2", opts = {} },
 	{ "nvim-tree/nvim-web-devicons", tag = "v0.100" },
-	{ "MunifTanjim/nui.nvim", tag = "0.3.0" },
-	{ "rcarriga/nvim-notify", tag = "v3.13.4" },
 	{ "williamboman/mason.nvim", tag = "v1.10.0" },
-	{
-		"nvimtools/none-ls.nvim",
-		version = "88821b67e6007041f43b802f58e3d9fa9bfce684",
-	},
-	----------------------------------------
-	--....................................--
-	--..... WARNING ....... WARNING ......--
-	--....................................--
-	----------------------------------------
-	-- Included to allow `Trouble workspace_diagnostics` to show results for non-buffered files.
-	-- The autor warns that this might come with some risk so I should keep my eyes open.
-	{ "artemave/workspace-diagnostics.nvim", version = "429174d53652dbef56868a2cbeb8b28cb5d44fdd" },
-	----------------------------------------
-	--....................................--
-	--. END WARNING ... END WARNING ......--
-	--....................................--
-	----------------------------------------
 	-----------------------------------------------------------
 	--.......................................................--
 	--.......................................................--
@@ -73,17 +50,31 @@ require("lazy").setup({
 		tag = "v1.29.0",
 		dependencies = { "williamboman/mason.nvim" },
 	},
-	{ "VonHeikemen/lsp-zero.nvim", branch = "v3.x" },
-	-- { "VonHeikemen/lsp-zero.nvim", version = "f12d50716e8e59ea9f5cf484eac6968c33a95917" }, TODO: replace previous line with this when ready
 	{ "neovim/nvim-lspconfig", tag = "v0.1.7" },
 	{ "hrsh7th/cmp-nvim-lsp", version = "39e2eda76828d88b773cc27a3f61d2ad782c922d" },
 	{ "hrsh7th/nvim-cmp", version = "5260e5e8ecadaf13e6b82cf867a909f54e15fd07" },
 	{ "L3MON4D3/LuaSnip", tag = "v2.3.0" },
+	{
+		"VonHeikemen/lsp-zero.nvim",
+		branch = "v3.x",
+		-- version = "f12d50716e8e59ea9f5cf484eac6968c33a95917" TODO: replace previous line with this when ready
+		dependencies = {
+			"williamboman/mason-lspconfig.nvim",
+			"neovim/nvim-lspconfig",
+			"hrsh7th/cmp-nvim-lsp",
+			"hrsh7th/nvim-cmp",
+			"L3MON4D3/LuaSnip",
+		},
+	},
 	-----------------------------------
 	--...............................--
 	-- START AUTO-FORMATTING PLUGINS --
 	--...............................--
 	-----------------------------------
+	{
+		"nvimtools/none-ls.nvim",
+		version = "88821b67e6007041f43b802f58e3d9fa9bfce684",
+	},
 	{
 		"jay-babu/mason-null-ls.nvim",
 		tag = "v2.6.0",
@@ -142,6 +133,11 @@ require("lazy").setup({
 	--........ START TEST PLUGINS ........--
 	--....................................--
 	----------------------------------------
+	{ "antoinemadec/FixCursorHold.nvim", version = "1900f89dc17c603eec29960f57c00bd9ae696495" }, -- Claims not to be required at https://github.com/antoinemadec/FixCursorHold.nvim but it is. See https://github.com/antoinemadec/FixCursorHold.nvim/issues/13
+	{ "marilari88/neotest-vitest", tag = "v0.2.0" },
+	{ "nvim-neotest/neotest-jest", version = "514fd4eae7da15fd409133086bb8e029b65ac43f" },
+	{ "nvim-neotest/neotest-go", version = "6a2f996d89fe4631942e035b1c114544ee045043" },
+	-- { "folke/neodev.nvim", tag = "v2.5.2", opts = {} },
 	{
 		"nvim-neotest/neotest",
 		tag = "v5.1.0",
@@ -182,6 +178,19 @@ require("lazy").setup({
 	{ "theprimeagen/harpoon", version = "ccae1b9bec717ae284906b0bf83d720e59d12b91" },
 	{ "tpope/vim-fugitive", version = "4f59455d2388e113bd510e85b310d15b9228ca0d" },
 	{ "kdheepak/lazygit.nvim", version = "0ada6c6e7e138df92f5009b6952f4ac41248305a" },
+	----------------------------------------
+	--....................................--
+	--..... WARNING ....... WARNING ......--
+	--....................................--
+	----------------------------------------
+	-- Included to allow `Trouble workspace_diagnostics` to show results for non-buffered files.
+	-- The autor warns that this might come with some risk so I should keep my eyes open.
+	{ "artemave/workspace-diagnostics.nvim", version = "429174d53652dbef56868a2cbeb8b28cb5d44fdd" },
+	----------------------------------------
+	--....................................--
+	--. END WARNING ... END WARNING ......--
+	--....................................--
+	----------------------------------------
 	{
 		"folke/trouble.nvim",
 		tag = "v2.10.0",
@@ -217,6 +226,8 @@ require("lazy").setup({
 		tag = "compat-nvim-0.6",
 		dependencies = { "nvim-tree/nvim-web-devicons" },
 	},
+	{ "MunifTanjim/nui.nvim", tag = "0.3.0" },
+	{ "rcarriga/nvim-notify", tag = "v3.13.4" },
 	{
 		"folke/noice.nvim",
 		tag = "v2.0.1",
