@@ -22,6 +22,21 @@ require("lazy").setup({
 	{ "nvim-neotest/neotest-jest", version = "514fd4eae7da15fd409133086bb8e029b65ac43f" },
 	{ "nvim-neotest/neotest-go", version = "6a2f996d89fe4631942e035b1c114544ee045043" },
 	{ "folke/neodev.nvim", tag = "v2.5.2", opts = {} },
+	{ "nvim-tree/nvim-web-devicons", tag = "v0.99" },
+	{ "MunifTanjim/nui.nvim", tag = "0.3.0" },
+	{ "rcarriga/nvim-notify", tag = "v3.13.4" },
+	{ "williamboman/mason.nvim" },
+	{
+		"nvimtools/none-ls.nvim",
+		version = "88821b67e6007041f43b802f58e3d9fa9bfce684",
+	},
+	------- WARNING ------- WARNING ------- WARNING -------
+	-- Included to allow `Trouble workspace_diagnostics`
+	-- to show results for non-buffered files.
+	-- The autor warns that this might come with some risk
+	-- so I should keep my eyes open.
+	{ "artemave/workspace-diagnostics.nvim", version = "429174d53652dbef56868a2cbeb8b28cb5d44fdd" },
+	--END-- WARNING ------- WARNING ------- WARNING -------
 	-- END THE DEPENDENCY ONLY PLUGINS
 	"folke/tokyonight.nvim",
 	"tpope/vim-fugitive",
@@ -56,8 +71,6 @@ require("lazy").setup({
 		"echasnovski/mini.indentscope",
 		tag = "v0.12.0",
 	},
-	{ "MunifTanjim/nui.nvim", tag = "0.3.0" },
-	{ "rcarriga/nvim-notify", tag = "v3.13.4" },
 	{
 		"folke/noice.nvim",
 		tag = "v2.0.1",
@@ -77,18 +90,13 @@ require("lazy").setup({
 	},
 	{ "kdheepak/lazygit.nvim", version = "0ada6c6e7e138df92f5009b6952f4ac41248305a" },
 	-- START LSP RELATED PLUGINS --
-	{ "williamboman/mason.nvim" },
-	{ "williamboman/mason-lspconfig.nvim" },
+	{ "williamboman/mason-lspconfig.nvim", dependencies = { "williamboman/mason.nvim" } },
 	{ "VonHeikemen/lsp-zero.nvim", branch = "v3.x" },
 	{ "neovim/nvim-lspconfig" },
 	{ "hrsh7th/cmp-nvim-lsp" },
 	{ "hrsh7th/nvim-cmp" },
 	{ "L3MON4D3/LuaSnip" },
 	-- START AUTO-FORMATTING PLUGINS--
-	{
-		"nvimtools/none-ls.nvim",
-		version = "88821b67e6007041f43b802f58e3d9fa9bfce684",
-	},
 	{
 		"jay-babu/mason-null-ls.nvim",
 		tag = "v2.6.0",
@@ -125,18 +133,13 @@ require("lazy").setup({
 		dependencies = { "mfussenegger/nvim-dap", "nvim-neotest/nvim-nio" },
 	},
 	-- END DAP RELATED PLUGINS --
-	------- WARNING ------- WARNING ------- WARNING -------
-	-- Included to allow `Trouble workspace_diagnostics`
-	-- to show results for non-buffered files.
-	-- The autor warns that this might come with some risk
-	-- so I should keep my eyes open.
-	{ "artemave/workspace-diagnostics.nvim", version = "429174d53652dbef56868a2cbeb8b28cb5d44fdd" },
-	--END-- WARNING ------- WARNING ------- WARNING -------
-	{ "nvim-tree/nvim-web-devicons", tag = "v0.99" },
 	{
 		"folke/trouble.nvim",
 		tag = "v2.10.0",
-		dependencies = { "nvim-tree/nvim-web-devicons" },
+		dependencies = {
+			"nvim-tree/nvim-web-devicons",
+			"artemave/workspace-diagnostics.nvim",
+		},
 	},
 	{
 		"nvim-neotest/neotest",
