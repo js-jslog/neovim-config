@@ -18,6 +18,7 @@ local nvimNioTag = "v1.9.0"
 local plenaryTag = "v0.1.4"
 local nvimWebDeviconsTag = "v0.100"
 local masonTag = "v1.10.0"
+local nvimDapTag = "0.7.0"
 local nvimTreesitterTag = "v0.9.2"
 
 require("lazy").setup({
@@ -76,15 +77,12 @@ require("lazy").setup({
 	--....................................--
 	----------------------------------------
 	{
-		"mfussenegger/nvim-dap",
-		tag = "0.7.0",
-	},
-	{
 		"mxsdev/nvim-dap-vscode-js",
 		tag = "v1.1.0",
 		dependencies = {
 			{
-				"mfussenegger/nvim-dap", --[[tag = see shared dependency a few lines up --]]
+				"mfussenegger/nvim-dap",
+				tag = nvimDapTag,
 			},
 			{
 				"microsoft/vscode-js-debug",
@@ -103,7 +101,8 @@ require("lazy").setup({
 		tag = "v4.0.0",
 		dependencies = {
 			{
-				"mfussenegger/nvim-dap", --[[tag = see shared dependency a few lines up --]]
+				"mfussenegger/nvim-dap",
+				tag = nvimDapTag,
 			},
 			{ "nvim-neotest/nvim-nio", tag = nvimNioTag },
 		},
