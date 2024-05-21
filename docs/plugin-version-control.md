@@ -54,6 +54,7 @@ At the time of writing the list of results is the following:
 - cmp-nvim-lsp/
 - harpoon/
 - neotest-jest/
+- noice.nvim/
 - nvim-cmp/
 - undotree/
 - vim-fugitive/
