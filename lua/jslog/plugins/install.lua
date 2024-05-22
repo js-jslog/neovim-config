@@ -14,12 +14,12 @@ vim.opt.rtp:prepend(lazypath)
 -- Define version numbers as local variables for those plugins
 -- which are dependencies of multiple other plugins. This will
 -- help maintain consistency and avoid misaligned dependencies
-local nvimNioTag = "v1.9.0"
-local plenaryTag = "v0.1.4"
+local nvimNioTag = "v1.9.3"
+local plenaryCommit = "a3e3bc82a3f95c5ed0d7201546d5d2c19b20d683"
 local nvimWebDeviconsTag = "v0.100"
 local masonTag = "v1.10.0"
 local nvimDapTag = "0.7.0"
-local nvimTreesitterTag = "v0.9.2"
+local nvimTreesitterCommit = "30de5e7e9486fb1b1b8c2a1e71052b13f94f1cb0"
 
 require("lazy").setup({
 	----------------------------------------
@@ -122,17 +122,17 @@ require("lazy").setup({
 		dependencies = {
 			-- first the required deps
 			{ "nvim-neotest/nvim-nio", tag = nvimNioTag },
-			{ "nvim-lua/plenary.nvim", tag = plenaryTag },
+			{ "nvim-lua/plenary.nvim", commit = plenaryCommit },
 			{
 				"antoinemadec/FixCursorHold.nvim",
 				commit = "1900f89dc17c603eec29960f57c00bd9ae696495",
 			}, -- Claims not to be required at https://github.com/antoinemadec/FixCursorHold.nvim but it is. See https://github.com/antoinemadec/FixCursorHold.nvim/issues/13
 			{
 				"nvim-treesitter/nvim-treesitter",
-				tag = nvimTreesitterTag,
+				commit = nvimTreesitterCommit,
 			},
 			-- the optional one
-			-- { "folke/neodev.nvim", tag = "v2.5.2", opts = {} },
+			--{ "folke/neodev.nvim", tag = "v2.5.2", opts = {} },
 			-- then adapters
 			{ "marilari88/neotest-vitest", tag = "v0.2.0" },
 			{
@@ -157,13 +157,13 @@ require("lazy").setup({
 	----------------------------------------
 	{
 		"nvim-treesitter/nvim-treesitter",
-		tag = nvimTreesitterTag,
+		commit = nvimTreesitterCommit,
 		run = ":TSUpdate",
 	},
 	{
 		"nvim-telescope/telescope.nvim",
 		tag = "0.1.5",
-		dependencies = { "nvim-lua/plenary.nvim", tag = plenaryTag },
+		dependencies = { "nvim-lua/plenary.nvim", commit = plenaryCommit },
 	},
 	{ "theprimeagen/harpoon", commit = "ccae1b9bec717ae284906b0bf83d720e59d12b91" },
 	{ "tpope/vim-fugitive", commit = "4f59455d2388e113bd510e85b310d15b9228ca0d" },
