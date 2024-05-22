@@ -34,9 +34,7 @@ If you want to delete everything which could need deleting to do a fresh install
 ```
 # Make sure you have closed nvim before doing this
 # or the subsequent install could fail
-rm -rf ~/.config/nvim/lazy-lock.json
-rm -rf ~/.local/share/nvim
-rm -rf ~/.local/state/nvim
+rm -rf ~/.config/nvim/lazy-lock.json && rm -rf ~/.local/share/nvim && rm -rf ~/.local/state/nvim
 ```
 
 A quick check of which projects are checkedout on a main or master branch can be performed like this:
