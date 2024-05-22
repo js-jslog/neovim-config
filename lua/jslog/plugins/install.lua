@@ -165,6 +165,13 @@ require("lazy").setup({
 		tag = "0.1.5",
 		dependencies = { "nvim-lua/plenary.nvim", commit = plenaryCommit },
 	},
+	{
+		"stevearc/oil.nvim",
+		tag = "v2.9.0",
+		dependencies = {
+			{ "nvim-tree/nvim-web-devicons", tag = nvimWebDeviconsTag },
+		},
+	},
 	{ "theprimeagen/harpoon", commit = "ccae1b9bec717ae284906b0bf83d720e59d12b91" },
 	{ "tpope/vim-fugitive", commit = "4f59455d2388e113bd510e85b310d15b9228ca0d" },
 	{ "kdheepak/lazygit.nvim", commit = "0ada6c6e7e138df92f5009b6952f4ac41248305a" },
@@ -213,6 +220,7 @@ require("lazy").setup({
 	--....................................--
 	----------------------------------------
 	{ "folke/tokyonight.nvim", tag = "v3.0.1" },
+	{ "tjdevries/cyclist.vim", commit = "d611ea3a21365f90d512dd024874e070e864309e" },
 	{
 		"nvim-lualine/lualine.nvim",
 		tag = "compat-nvim-0.6",
@@ -255,6 +263,7 @@ require("lazy").setup({
 	--....... START OTHER PLUGINS ........--
 	--....................................--
 	----------------------------------------
+	{ "ThePrimeagen/vim-be-good", commit = "4fa57b7957715c91326fcead58c1fa898b9b3625" },
 	{ "github/copilot.vim", branch = "release" },
 	----------------------------------------
 	--....................................--
