@@ -29,8 +29,7 @@ require("lazy").setup({
 	----------------------------------------
 	{
 		"VonHeikemen/lsp-zero.nvim",
-		branch = "v3.x",
-		-- commit = "f12d50716e8e59ea9f5cf484eac6968c33a95917" TODO: replace previous line with this when ready
+		commit = "f12d50716e8e59ea9f5cf484eac6968c33a95917",
 		dependencies = {
 			{
 				"williamboman/mason-lspconfig.nvim",
