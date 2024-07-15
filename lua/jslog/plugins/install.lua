@@ -253,6 +253,10 @@ require("lazy").setup({
 		"echasnovski/mini.indentscope",
 		tag = "v0.12.0",
 	},
+	{
+		"danilamihailov/beacon.nvim",
+		tag = "v2.0.1",
+	},
 	----------------------------------------
 	--....................................--
 	--........ END VISUAL PLUGINS ........--
