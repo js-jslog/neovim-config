@@ -22,6 +22,18 @@ require("mason-lspconfig").setup({
 	},
 })
 
+local cmp = require("cmp")
+cmp.setup({
+	mapping = {
+		["<Tab>"] = cmp.mapping.select_next_item(),
+		["<S-Tab>"] = cmp.mapping.select_prev_item(),
+		["<CR>"] = cmp.mapping.confirm({ select = true }),
+		["<C-j>"] = cmp.mapping.select_next_item(),
+		["<C-k>"] = cmp.mapping.select_prev_item(),
+		["<C-l>"] = cmp.mapping.confirm({ select = true }),
+	},
+})
+
 vim.keymap.set("n", "<Leader>lt", ":lua vim.lsp.buf.hover()<CR>")
 vim.keymap.set("n", "<Leader>li", ":lua vim.lsp.buf.implementation()<CR>")
 vim.keymap.set("n", "<Leader>ld", ":lua vim.lsp.buf.definition()<CR>")
