@@ -23,7 +23,6 @@ vim.api.nvim_set_keymap("n", "<Leader>gl", ":execute ':!git pull'<CR>", { norema
 -- Allow J & K to move visually selected blocks
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
-
 -- Prevent cursor moving to end of line when using J
 vim.keymap.set("n", "J", "mzJ`z")
 
