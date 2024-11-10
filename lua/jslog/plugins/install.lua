@@ -228,16 +228,16 @@ require("lazy").setup({
 			{ "nvim-tree/nvim-web-devicons", tag = nvimWebDeviconsTag },
 		},
 	},
-	{
-		"folke/noice.nvim",
-		tag = "v3.0.1",
-		event = "VeryLazy",
-		opts = {},
-		dependencies = {
-			{ "MunifTanjim/nui.nvim", tag = "0.3.0" },
-			{ "rcarriga/nvim-notify", tag = "v3.13.4" },
-		},
-	},
+	--{
+	--	"folke/noice.nvim",
+	--	tag = "v3.0.1",
+	--	event = "VeryLazy",
+	--	opts = {},
+	--	dependencies = {
+	--		{ "MunifTanjim/nui.nvim", tag = "0.3.0" },
+	--		{ "rcarriga/nvim-notify", tag = "v3.13.4" },
+	--	},
+	--},
 	{
 		"stevearc/dressing.nvim",
 		tag = "v2.2.0",
