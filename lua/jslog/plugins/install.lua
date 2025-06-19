@@ -57,7 +57,7 @@ require("lazy").setup({
 			{
 				{ "williamboman/mason.nvim", tag = masonTag },
 			},
-			{ "nvimtools/none-ls.nvim", commit = "88821b67e6007041f43b802f58e3d9fa9bfce684" },
+			{ "nvimtools/none-ls.nvim", commit = "db2a48b79cfcdab8baa5d3f37f21c78b6705c62e" },
 		},
 	},
 	-----------------------------------
