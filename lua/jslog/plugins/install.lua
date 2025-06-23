@@ -118,7 +118,7 @@ require("lazy").setup({
 	----------------------------------------
 	{
 		"nvim-neotest/neotest",
-		tag = "v5.1.0",
+		tag = "v5.8.0",
 		dependencies = {
 			-- first the required deps
 			{ "nvim-neotest/nvim-nio", tag = nvimNioTag },
