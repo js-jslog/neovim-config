@@ -14,7 +14,7 @@ vim.opt.rtp:prepend(lazypath)
 -- Define version numbers as local variables for those plugins
 -- which are dependencies of multiple other plugins. This will
 -- help maintain consistency and avoid misaligned dependencies
-local nvimNioTag = "v1.9.3"
+local nvimNioTag = "v1.10.1"
 local plenaryCommit = "a3e3bc82a3f95c5ed0d7201546d5d2c19b20d683"
 local nvimWebDeviconsTag = "v0.100"
 local masonTag = "v1.10.0"
