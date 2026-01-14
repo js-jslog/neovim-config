@@ -18,9 +18,26 @@ require("neotest").setup({
 		-- UPDATE WHEN ACTUALLY IN USE
 		require("neotest-jest")({
 			jestCommand = "npm test --",
-			jestConfigFile = "custom.jest.config.ts",
 			env = { CI = true },
 			cwd = function(path)
+				-- Find the nearest package directory by
+				-- looking for package.json starting from
+				-- the test file and walking up
+				local current_dir = vim.fn.fnamemodify(path, ":h")
+
+				while current_dir ~= "/" do
+					local package_json = current_dir .. "/package.json"
+
+					-- Check if both package.json exists
+					if vim.fn.filereadable(package_json) == 1 then
+						return current_dir
+					end
+
+					-- Move up one directory
+					current_dir = vim.fn.fnamemodify(current_dir, ":h")
+				end
+
+				-- Fallback to current working directory if not found
 				return vim.fn.getcwd()
 			end,
 		}),
