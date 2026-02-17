@@ -137,7 +137,7 @@ require("lazy").setup({
 			{ "marilari88/neotest-vitest", tag = "v0.2.0" },
 			{
 				"nvim-neotest/neotest-jest",
-				commit = "514fd4eae7da15fd409133086bb8e029b65ac43f",
+				commit = "3f0cc2cff1ee05394081805c622dc2551b54d8c4",
 			},
 			{
 				"nvim-neotest/neotest-go",
