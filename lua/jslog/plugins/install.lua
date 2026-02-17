@@ -17,7 +17,7 @@ vim.opt.rtp:prepend(lazypath)
 local nvimNioTag = "v1.10.1"
 local plenaryCommit = "a3e3bc82a3f95c5ed0d7201546d5d2c19b20d683"
 local nvimWebDeviconsTag = "v0.100"
-local masonTag = "v1.10.0"
+local masonTag = "v2.2.1"
 local nvimDapTag = "0.7.0"
 local nvimTreesitterCommit = "30de5e7e9486fb1b1b8c2a1e71052b13f94f1cb0"
 
@@ -33,15 +33,15 @@ require("lazy").setup({
 		dependencies = {
 			{
 				"williamboman/mason-lspconfig.nvim",
-				tag = "v1.29.0",
+				tag = "v2.1.0",
 				dependencies = {
 					{ "williamboman/mason.nvim", tag = masonTag },
 				},
 			},
-			{ "neovim/nvim-lspconfig", tag = "v0.1.7" },
-			{ "hrsh7th/cmp-nvim-lsp", commit = "39e2eda76828d88b773cc27a3f61d2ad782c922d" },
-			{ "hrsh7th/nvim-cmp", commit = "5260e5e8ecadaf13e6b82cf867a909f54e15fd07" },
-			{ "L3MON4D3/LuaSnip", tag = "v2.3.0" },
+			{ "neovim/nvim-lspconfig", tag = "v2.6.0" },
+			{ "hrsh7th/cmp-nvim-lsp", commit = "cbc7b02bb99fae35cb42f514762b89b5126651ef" },
+			{ "hrsh7th/nvim-cmp", commit = "v0.0.2" },
+			{ "L3MON4D3/LuaSnip", tag = "v2.4.1" },
 		},
 	},
 	-----------------------------------
@@ -57,7 +57,7 @@ require("lazy").setup({
 			{
 				{ "williamboman/mason.nvim", tag = masonTag },
 			},
-			{ "nvimtools/none-ls.nvim", commit = "db2a48b79cfcdab8baa5d3f37f21c78b6705c62e" },
+			{ "nvimtools/none-ls.nvim", commit = "f61f46ded0ca9edce7a09b674f8e162d10921426" },
 		},
 	},
 	-----------------------------------
