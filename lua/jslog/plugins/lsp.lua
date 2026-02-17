@@ -16,7 +16,7 @@ end)
 require("mason").setup({})
 require("mason-lspconfig").setup({
 	-- Requirements defined at https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md
-	ensure_installed = { "tsserver", "eslint", "lua_ls" },
+	ensure_installed = { "ts_ls", "eslint", "lua_ls" },
 	handlers = {
 		lsp_zero.default_setup,
 	},
