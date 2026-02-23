@@ -14,11 +14,9 @@ vim.opt.rtp:prepend(lazypath)
 -- Define version numbers as local variables for those plugins
 -- which are dependencies of multiple other plugins. This will
 -- help maintain consistency and avoid misaligned dependencies
-local nvimNioTag = "v1.10.1"
 local plenaryCommit = "a3e3bc82a3f95c5ed0d7201546d5d2c19b20d683"
 local nvimWebDeviconsTag = "v0.100"
 local masonTag = "v2.2.1"
-local nvimDapTag = "0.7.0"
 local nvimTreesitterCommit = "30de5e7e9486fb1b1b8c2a1e71052b13f94f1cb0"
 
 require("lazy").setup({
@@ -72,47 +70,6 @@ require("lazy").setup({
 	----------------------------------------
 	----------------------------------------
 	--....................................--
-	--......... START DAP PLUGINS ........--
-	--....................................--
-	----------------------------------------
-	{
-		"mxsdev/nvim-dap-vscode-js",
-		tag = "v1.1.0",
-		dependencies = {
-			{
-				"mfussenegger/nvim-dap",
-				tag = nvimDapTag,
-			},
-			{
-				"microsoft/vscode-js-debug",
-				tag = "v1.88.0",
-				build = "npm install --legacy-peer-deps && npx gulp vsDebugServerBundle && mv dist out",
-			},
-			{
-				"stevearc/overseer.nvim",
-				tag = "v1.3.1",
-				opts = {},
-			},
-		},
-	},
-	{
-		"rcarriga/nvim-dap-ui",
-		tag = "v4.0.0",
-		dependencies = {
-			{
-				"mfussenegger/nvim-dap",
-				tag = nvimDapTag,
-			},
-			{ "nvim-neotest/nvim-nio", tag = nvimNioTag },
-		},
-	},
-	----------------------------------------
-	--....................................--
-	--.......... END DAP PLUGINS .........--
-	--....................................--
-	----------------------------------------
-	----------------------------------------
-	--....................................--
 	--........ START TEST PLUGINS ........--
 	--....................................--
 	----------------------------------------
@@ -121,7 +78,7 @@ require("lazy").setup({
 		tag = "v5.8.0",
 		dependencies = {
 			-- first the required deps
-			{ "nvim-neotest/nvim-nio", tag = nvimNioTag },
+			{ "nvim-neotest/nvim-nio", tag = "v1.10.1" },
 			{ "nvim-lua/plenary.nvim", commit = plenaryCommit },
 			{
 				"antoinemadec/FixCursorHold.nvim",
