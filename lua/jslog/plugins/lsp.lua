@@ -19,6 +19,16 @@ require("mason-lspconfig").setup({
 	ensure_installed = { "ts_ls", "eslint", "lua_ls" },
 	handlers = {
 		lsp_zero.default_setup,
+		-- In a monorepo (no root tsconfig.json), the
+		-- default root_pattern finds the workspace
+		-- package.json first, which has no tsconfig.
+		-- So we aim for the closest parent dir with
+		-- a tsconfig.json instead.
+		ts_ls = function()
+			require("lspconfig").ts_ls.setup({
+				root_dir = require("lspconfig.util").root_pattern("tsconfig.json", ".git"),
+			})
+		end,
 	},
 })
 
